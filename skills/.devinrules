@@ -1,0 +1,12 @@
+### DIRETRIZES DE DESIGN E ESTRUTURA
+
+**1. Inspiração de Estilo (DESIGN-mistral.ai.md):**
+Use este material estritamente como referência visual. Quero que a Landing Page tenha essa mesma 'vibe' estética: limpa, moderna, com boas margens, hierarquia visual clara e tipografia elegante. Cores sugeridas: azul marinho, dourado/mostarda (presentes no logo) e branco.
+
+**2. Referência de Funcionalidade (lunelli_contadora.html):**
+Analise este HTML de referência apenas para entender a estrutura de uma página do nicho (quais seções existem, como os serviços são apresentados, botões de ação). Não reutilize o código HTML dele diretamente. Recrie essa mesma estrutura de seções do zero, garantindo que o novo código seja leve e otimizado.
+
+**3. Requisitos Técnicos:**
+*   Utilize HTML5 puro + Tailwind CSS (ou Next.js com Tailwind, o que gerar o código mais limpo e fácil de manter em um único arquivo/componente se possível).
+*   A página deve ser estritamente Mobile-First.
+*   Sem backend: O botão principal de 'Contato' deve usar uma tag simples que redirecione o cliente diretamente para o WhatsApp dela com uma mensagem pré-pronta.

@@ -1,0 +1,204 @@
+===============================================================================
+  GUIA DO PROJETO — Barra da Lagoa Serviços Administrativos
+  Landing page para Suzana Silva
+===============================================================================
+
+-------------------------------------------------------------------------------
+1. ESTRUTURA DO PROJETO
+-------------------------------------------------------------------------------
+
+Site/
+├── index.html                          ← Página principal (único arquivo do site)
+├── assets/
+│   └── images/
+│       ├── logo-farol.png              ← Logo do farol (header, hero e footer)
+│       ├── foto-perfil.png             ← Foto da Suzana (seção Sobre)
+│       └── concha-dourada.png          ← Conchas decorativas (rodapé)
+├── DESIGN-mistral.ai.md                ← Referência de design (não publicado)
+├── skills/
+│   └── .devinrules                     ← Diretrizes técnicas (não publicado)
+└── GUIA-DO-PROJETO.txt                 ← Este arquivo
+
+Para publicar o site, basta subir: index.html + a pasta assets/.
+
+
+-------------------------------------------------------------------------------
+2. TECNOLOGIAS USADAS
+-------------------------------------------------------------------------------
+
+- HTML5 (arquivo único: index.html)
+- Tailwind CSS (via CDN: https://cdn.tailwindcss.com)
+- JavaScript vanilla (menu mobile + tabs de serviços, embutido no index.html)
+- Google Fonts: Fraunces (títulos) + Inter (corpo do texto)
+
+Não há backend. Não há banco de dados. Não há build step.
+É um site estático puro.
+
+
+-------------------------------------------------------------------------------
+3. COMO ABRIR LOCALMENTE
+-------------------------------------------------------------------------------
+
+Opção A — Abrir direto no navegador:
+  1. Dê duplo clique em index.html
+  2. Ele abre no navegador
+
+Opção B — Servidor local (recomendado, para testar tudo corretamente):
+  No terminal, dentro da pasta Site/:
+    python3 -m http.server 8080
+  Depois acesse: http://localhost:8080
+
+
+-------------------------------------------------------------------------------
+4. COMO ACESSAR DE OUTRA MÁQUINA (MESMA REDE/Wi-Fi)
+-------------------------------------------------------------------------------
+
+1. Descubra o IP do seu computador:
+   No terminal: ip addr  (ou ifconfig)
+   Procure algo como: 192.168.x.x
+
+2. Inicie o servidor:
+   python3 -m http.server 8080 --bind 0.0.0.0
+
+3. Na outra máquina (celular, notebook, etc.), abra o navegador:
+   http://192.168.x.x:8080
+   (substitua pelo seu IP real)
+
+Importante: ambas as máquinas precisam estar na mesma rede/Wi-Fi.
+
+
+-------------------------------------------------------------------------------
+5. COMO TRANSFORMAR EM SITE PÚBLICO (DOMÍNIO)
+-------------------------------------------------------------------------------
+
+Existem várias opções gratuitas e pagas. Aqui as mais simples:
+
+OPÇÃO 1 — Netlify (GRÁTIS, mais fácil)
+  a. Crie conta em: https://netlify.com
+  b. Arraste a pasta Site/ para o Netlify Drop:
+     https://app.netlify.com/drop
+  c. Pronto! Você recebe um link tipo: https://barra-da-lagoa.netlify.app
+  d. Para domínio personalizado (ex: barradalagoa.com.br):
+     - Compre o domínio em: Registro.br, Hostinger, GoDaddy, etc.
+     - No Netlify: Site Settings > Domain Management > Add custom domain
+     - Siga as instruções para apontar o DNS
+
+OPÇÃO 2 — GitHub Pages (GRÁTIS)
+  a. Crie conta em: https://github.com
+  b. Crie um repositório (ex: barra-da-lagoa)
+  c. Faça upload dos arquivos (index.html + pasta assets/)
+  d. Vá em: Settings > Pages
+  e. Source: Deploy from a branch > main > / (root) > Save
+  f. Pronto! Link: https://SEU-USUARIO.github.io/barra-da-lagoa
+
+OPÇÃO 3 — Vercel (GRÁTIS)
+  a. Crie conta em: https://vercel.com
+  b. Importe o repositório do GitHub
+  c. Deploy automático
+  d. Link: https://barra-da-lagoa.vercel.app
+
+RECOMENDAÇÃO: Netlify é o mais fácil para começar.
+
+
+-------------------------------------------------------------------------------
+6. COMO SUBIR PARA O GITHUB (VERSIONAMENTO)
+-------------------------------------------------------------------------------
+
+Pré-requisito: instale o Git (https://git-scm.com/downloads)
+
+No terminal, dentro da pasta Site/:
+
+  git init
+  git add index.html assets/ GUIA-DO-PROJETO.txt
+  git commit -m "Landing page Barra da Lagoa - versão inicial"
+
+  # (Opcional: subir arquivos de referência também)
+  git add DESIGN-mistral.ai.md skills/
+  git commit -m "Arquivos de referência e diretrizes"
+
+  # Conectar ao GitHub:
+  git remote add origin https://github.com/SEU-USUARIO/barra-da-lagoa.git
+  git branch -M main
+  git push -u origin main
+
+DICA: Crie um arquivo .gitignore com:
+  .DS_Store
+  *.tmp
+  node_modules/
+
+
+-------------------------------------------------------------------------------
+7. COMO EDITAR O SITE
+-------------------------------------------------------------------------------
+
+- Todo o código está em index.html (HTML + CSS + JavaScript em um arquivo)
+- As cores estão definidas no tailwind.config (linhas 20-54)
+- Para mudar textos: basta editar o HTML diretamente
+- Para mudar cores: troque os valores hex no tailwind.config
+- Para trocar imagens: substitua os arquivos em assets/images/
+
+Cores da paleta atual (tema praia paradisíaca):
+  navy-900: #003049  (oceano profundo — títulos, textos principais)
+  navy-800: #005f73  (oceano — hover states)
+  navy-700: #0077b6  (azul cristalino — links, bordas, ícones)
+  navy-600: #0a9396  (turquesa — textos secundários)
+  navy-500: #48cae4  (turquesa claro — destaques no hero)
+  cream:    #f9f0e3  (areia clara — fundo das seções)
+  gold-500: #e76f51  (concha coral — NÃO USADO, reservado)
+  WhatsApp: #25D366  (verde padrão WhatsApp — botões de contato)
+
+Gradiente do hero: #003049 → #005f73 → #0077b6 → #0a9396
+
+
+-------------------------------------------------------------------------------
+8. INFORMAÇÕES DE CONTATO DA MARCA
+-------------------------------------------------------------------------------
+
+  Nome:         Barra da Lagoa Serviços Administrativos
+  Profissional: Suzana Silva
+  WhatsApp:     (48) 98848-5275
+  Atendimento:  Brasil e exterior (África, Argentina, Espanha, Uruguai)
+  Slogan:       Soluções administrativas para você e seu negócio!
+
+  Link de WhatsApp com mensagem pré-pronta:
+  https://wa.me/5548988485275?text=Olá%20Suzana%20Silva!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Barra%20da%20Lagoa.
+
+
+-------------------------------------------------------------------------------
+9. CHECKLIST PARA PUBLICAR
+-------------------------------------------------------------------------------
+
+  [ ] Testar o site localmente (python3 -m http.server 8080)
+  [ ] Testar no celular (mesma rede Wi-Fi)
+  [ ] Criar conta no Netlify
+  [ ] Fazer upload da pasta (Netlify Drop ou GitHub)
+  [ ] Testar o link público
+  [ ] (Opcional) Comprar domínio personalizado
+  [ ] (Opcional) Configurar Google Analytics para ver visitantes
+  [ ] Subir código para o GitHub para versionamento
+
+
+-------------------------------------------------------------------------------
+10. PERGUNTAS FREQUENTES
+-------------------------------------------------------------------------------
+
+  Preciso de servidor/hospedagem pago?
+  Não. Netlify, GitHub Pages e Vercel são gratuitos para sites estáticos.
+
+  Preciso saber programar para manter?
+  Não. Os textos estão direto no HTML. Basta abrir o index.html em qualquer
+  editor de texto (Bloco de Notes, VS Code, etc.) e alterar.
+
+  Como mudar a foto da Suzana?
+  Substitua o arquivo assets/images/foto-perfil.png por outra imagem
+  quadrada (idealmente 512x512px ou maior).
+
+  Como mudar o logo?
+  Substitua assets/images/logo-farol.png por outro PNG transparente.
+
+  O site funciona no celular?
+  Sim, é 100% responsivo (mobile-first com Tailwind CSS).
+
+===============================================================================
+  Fim do guia — Dúvidas? Consulte ou peça ajuda ao Windsurf/Cascade.
+===============================================================================
